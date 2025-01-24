@@ -6,9 +6,22 @@ const coinSchema = new mongoose.Schema({
         required: [true, "Coin name is required."]
     },
     data: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "CoinData",
-        required: true
+        price: {
+            type: Number,
+            required: true
+        },
+        marketCap: {
+            type: Number,
+            required: true
+        },
+        price_change_24h: {
+            type: Number,
+            required: true,
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        }
     }]
 });
 
